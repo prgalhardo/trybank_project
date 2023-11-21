@@ -29,7 +29,6 @@ public class TrybankLib
                 throw new ArgumentException("A conta já está sendo usada!");
             }
         }
-
         Bank[registeredAccounts, 0] = number;
         Bank[registeredAccounts, 1] = agency;
         Bank[registeredAccounts, 2] = pass;
@@ -40,11 +39,10 @@ public class TrybankLib
     // 2. Construa a funcionalidade de fazer Login
     public void Login(int number, int agency, int pass)
     {
-        if (Logged == true) {
+        Logged ?
             throw new AccessViolationException("Usuário já está logado");
-        }
-
-        for (int i = 0; i < maxAccounts; i++) {
+        : 
+        for (int i = 0; i < registeredAccounts; i++) {
             if (Bank[i, 0] == number && Bank[i, 1] == agency && Bank[i, 2] == pass) {
                 Logged = true;
                 loggedUser = i;
@@ -52,7 +50,7 @@ public class TrybankLib
             else if (Bank[i, 0] == number && Bank[i, 1] == agency && Bank[i, 2] != pass) {
                 throw new ArgumentException("Senha incorreta");
             }
-            else if (Bank[i, 0] != number || Bank[i, 1] != agency) {
+            else (Bank[i, 0] != number || Bank[i, 1] != agency) {
                 throw new ArgumentException("Agência + Conta não encontrada");
             }
         }
