@@ -88,7 +88,7 @@ public class TrybankLib
             throw new AccessViolationException("Usuário não está logado");
         }
         else {
-            return Bank[loggedUser, 3] += value;
+            Bank[loggedUser, 3] += value;
         }
     }
 
@@ -103,7 +103,7 @@ public class TrybankLib
                 throw new InvalidOperationException("Saldo insuficiente");
             }
             else {
-                return Bank[loggedUser, 3] -= value;
+                Bank[loggedUser, 3] -= value;
             }
         }
     }
