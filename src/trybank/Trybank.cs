@@ -77,7 +77,7 @@ public class TrybankLib
             throw new AccessViolationException("Usuário não está logado");
         }
         else {
-            Bank[loggedUser, 3];
+            return Bank[loggedUser, 3];
         }   
     }
 
