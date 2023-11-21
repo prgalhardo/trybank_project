@@ -52,7 +52,7 @@ public class TrybankLib
                 else if (Bank[i, 0] == number && Bank[i, 1] == agency && Bank[i, 2] != pass) {
                     throw new ArgumentException("Senha incorreta");
                 }
-                else (Bank[i, 0] != number || Bank[i, 1] != agency) {
+                else if (Bank[i, 0] != number || Bank[i, 1] != agency) {
                     throw new ArgumentException("Agência + Conta não encontrada");
                 }
             }
